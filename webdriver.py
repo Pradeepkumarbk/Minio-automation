@@ -4,7 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.chrome.options import Options
 import os
-
 print("hi")
 chrome_options = Options()
 chrome_options.add_argument('--ignore-certificate-errors')
@@ -13,8 +12,9 @@ chrome_options.add_argument("--headless")
 chrome_options.add_argument('--no-sandbox')
 driverpath = os.path.realpath("/usr/bin/chromedriver")
 driver = webdriver.Chrome(chrome_options=chrome_options, executable_path=driverpath)
+driver.delete_all_cookies()
 driver.get("https://minio.openebs.ci")
-driver.save_screenshot("screenshot2.png")
+driver.save_screenshot("screenshot5.png")
 time.sleep(5)
 print("hi")
 elem = driver.find_element_by_id("accessKey")
