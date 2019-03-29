@@ -71,16 +71,7 @@ for y in users:
             driver.find_element_by_xpath("//*[@id='root']/div/div[2]/div[2]/div/div[2]/div[1]/div/div/div[5]/div/ul/a[2]").click()
             time.sleep(1)
             driver.find_element_by_xpath("/html/body/div[3]/div[2]/div/div/div[2]/button[1]").click()
-            time.sleep(3)
-        except NoSuchElementException as exception:
-            SLACK_API_TOKEN = "xoxb-227727824192-567193028994-iFe7C9bAgusPO7fkB0qjIyck"
-            sc = SlackClient(SLACK_API_TOKEN)
-            sc.api_call (
-                "chat.postMessage",
-                channel="#automation_results",
-                text=("Failed to upload file: Time-out")
-            )
-            break        
+            time.sleep(3)        
         i = i + 1
     # delete
     driver.find_element_by_xpath("//*[@id='sidebar-toggle']").click()
